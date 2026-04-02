@@ -6,8 +6,8 @@ export default function DomainSalePage() {
   return (
     <div className="min-h-screen bg-black text-white font-sans flex flex-col items-center px-4 py-16 relative overflow-hidden">
       
-      {/* Golden Logo Watermark - تصحيح مسار اللوجو الذهبي */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] pointer-events-none w-full max-w-[450px] z-0">
+      {/* Golden Logo Watermark - زيادة حجم اللوجو وتغيير موقعه */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none w-full max-w-[800px] z-0">
         <img 
           src="/logo.png" 
           alt="Brand Logo"
@@ -16,7 +16,7 @@ export default function DomainSalePage() {
         />
       </div>
 
-      {/* Header Section */}
+      {/* Content Section - هذا هو الجزء الذي يظهر فوق اللوجو */}
       <div className="text-center mb-12 z-10">
         <h2 className="text-yellow-500 font-bold tracking-[0.4em] text-[10px] mb-4">ESTABLISHED 2004</h2>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none italic">
@@ -57,7 +57,7 @@ export default function DomainSalePage() {
       </div>
 
       {/* Acquisition Section */}
-      <div className="max-w-md w-full bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800 text-center shadow-2xl z-10">
+      <div className="max-w-md w-full bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800 text-center shadow-2xl z-10 overflow-visible">
         <h3 className="text-2xl font-black text-white mb-4 italic uppercase tracking-tighter">Make an Offer</h3>
         <p className="text-zinc-400 text-xs mb-10 leading-relaxed font-bold uppercase tracking-wide">
           Secure this rare asset. Transfer via Escrow.com or Dan.com
