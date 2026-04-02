@@ -6,8 +6,8 @@ export default function DomainSalePage() {
   return (
     <div className="min-h-screen bg-black text-white font-sans flex flex-col items-center px-4 py-16 relative overflow-hidden">
       
-      {/* Golden Logo Watermark - زيادة حجم اللوجو وتغيير موقعه */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none w-full max-w-[800px] z-0">
+      {/* Golden Logo Watermark - كبير وفي المنتصف */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none w-full max-w-[700px] md:max-w-[900px] z-0">
         <img 
           src="/logo.png" 
           alt="Brand Logo"
@@ -16,7 +16,7 @@ export default function DomainSalePage() {
         />
       </div>
 
-      {/* Content Section - هذا هو الجزء الذي يظهر فوق اللوجو */}
+      {/* Header Section */}
       <div className="text-center mb-12 z-10">
         <h2 className="text-yellow-500 font-bold tracking-[0.4em] text-[10px] mb-4">ESTABLISHED 2004</h2>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none italic">
@@ -25,26 +25,28 @@ export default function DomainSalePage() {
         <p className="text-zinc-500 text-xs mt-6 font-bold uppercase tracking-[0.3em]">Premium Digital Real Estate</p>
       </div>
 
-      {/* Domain Value Props */}
-      <div className="max-w-2xl w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 z-10">
-        <div className="bg-zinc-900/40 backdrop-blur-md p-6 rounded-3xl border border-zinc-800/50 text-center">
-          <History className="text-yellow-500 mx-auto mb-3" size={24} />
-          <h4 className="text-[10px] font-black mb-1 tracking-widest uppercase">Aged Asset</h4>
-          <p className="text-[9px] text-zinc-500 leading-tight uppercase font-bold">20+ Years Authority. Trusted since 2004.</p>
+      {/* Domain Value Props - النصوص التي طلبتها بالضبط */}
+      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 z-10">
+        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
+          <History className="text-yellow-500 mx-auto mb-4" size={28} />
+          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">AGED ASSET</h4>
+          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">20+ years of SEO authority. A trusted brand since 2004.</p>
         </div>
-        <div className="bg-zinc-900/40 backdrop-blur-md p-6 rounded-3xl border border-zinc-800/50 text-center">
-          <Globe className="text-yellow-500 mx-auto mb-3" size={24} />
-          <h4 className="text-[10px] font-black mb-1 tracking-widest uppercase">Global Brand</h4>
-          <p className="text-[9px] text-zinc-500 leading-tight uppercase font-bold">Perfect for Fintech or E-commerce.</p>
+        
+        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
+          <Globe className="text-yellow-500 mx-auto mb-4" size={28} />
+          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">GLOBAL POTENTIAL</h4>
+          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">Ideal for Fintech, Payments, Crypto or E-commerce brands.</p>
         </div>
-        <div className="bg-zinc-900/40 backdrop-blur-md p-6 rounded-3xl border border-zinc-800/50 text-center">
-          <ShieldCheck className="text-yellow-500 mx-auto mb-3" size={24} />
-          <h4 className="text-[10px] font-black mb-1 tracking-widest uppercase">Full Bundle</h4>
-          <p className="text-[9px] text-zinc-500 leading-tight uppercase font-bold">Includes all social media handles.</p>
+        
+        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
+          <ShieldCheck className="text-yellow-500 mx-auto mb-4" size={28} />
+          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">FULL BUNDLE</h4>
+          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">Includes premium social media handles as a free gift.</p>
         </div>
       </div>
 
-      {/* Social Media Assets - الروابط المصححة */}
+      {/* Social Media Assets */}
       <div className="max-w-3xl w-full mb-16 z-10">
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
           <SocialIcon icon={<Youtube size={20}/>} label="YouTube" href="https://youtube.com/@80dollars" />
@@ -57,7 +59,7 @@ export default function DomainSalePage() {
       </div>
 
       {/* Acquisition Section */}
-      <div className="max-w-md w-full bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800 text-center shadow-2xl z-10 overflow-visible">
+      <div className="max-w-md w-full bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800 text-center shadow-2xl z-10">
         <h3 className="text-2xl font-black text-white mb-4 italic uppercase tracking-tighter">Make an Offer</h3>
         <p className="text-zinc-400 text-xs mb-10 leading-relaxed font-bold uppercase tracking-wide">
           Secure this rare asset. Transfer via Escrow.com or Dan.com
