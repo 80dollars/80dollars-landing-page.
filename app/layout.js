@@ -1,6 +1,8 @@
+import './globals.css'
+
 export const metadata = {
-  title: '80 Dollars - Premium Domain',
-  description: 'This premium domain is for sale',
+  title: '80DOLLARS.COM | Domain For Sale',
+  description: 'Premium Digital Asset',
 }
 
 export default function RootLayout({ children }) {
