@@ -1,92 +1,71 @@
 "use client";
-import React from 'react';
-import { Youtube, Github, Facebook, Instagram, Twitter, Linkedin, Mail, ShieldCheck, History, Globe } from 'lucide-react';
 
-export default function DomainSalePage() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans flex flex-col items-center px-4 py-16 relative overflow-hidden">
+    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
       
-      {/* Golden Logo Watermark - كبير وفي المنتصف */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none w-full max-w-[700px] md:max-w-[900px] z-0">
-        <img 
-          src="/logo.png" 
-          alt="Brand Logo"
-          className="w-full h-auto"
-          onError={(e) => e.target.style.display = 'none'}
-        />
+      {/* تأثير الغبار الذهبي والخلفية الاحترافية */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-900/20 via-black to-black"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
-      {/* Header Section */}
-      <div className="text-center mb-12 z-10">
-        <h2 className="text-yellow-500 font-bold tracking-[0.4em] text-[10px] mb-4">ESTABLISHED 2004</h2>
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none italic">
-          80DOLLARS <br /> <span className="text-yellow-500">.COM</span>
+      <div className="relative z-10 w-full max-w-2xl">
+        
+        {/* ملصق التأسيس لرفع القيمة */}
+        <div className="mb-8 inline-block border border-yellow-600/40 px-6 py-2 rounded-full bg-yellow-950/10 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+          <span className="text-yellow-500 font-bold tracking-[0.2em] text-xs uppercase">
+            Aged Domain • Established 2004
+          </span>
+        </div>
+
+        {/* العنوان الرئيسي الفخم */}
+        <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter italic text-white drop-shadow-[0_0_30px_rgba(234,179,8,0.4)]">
+          80DOLLARS<span className="text-yellow-500">.COM</span>
         </h1>
-        <p className="text-zinc-500 text-xs mt-6 font-bold uppercase tracking-[0.3em]">Premium Digital Real Estate</p>
-      </div>
 
-      {/* Domain Value Props - النصوص التي طلبتها بالضبط */}
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 z-10">
-        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
-          <History className="text-yellow-500 mx-auto mb-4" size={28} />
-          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">AGED ASSET</h4>
-          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">20+ years of SEO authority. A trusted brand since 2004.</p>
-        </div>
-        
-        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
-          <Globe className="text-yellow-500 mx-auto mb-4" size={28} />
-          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">GLOBAL POTENTIAL</h4>
-          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">Ideal for Fintech, Payments, Crypto or E-commerce brands.</p>
-        </div>
-        
-        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-zinc-800/50 text-center">
-          <ShieldCheck className="text-yellow-500 mx-auto mb-4" size={28} />
-          <h4 className="text-sm font-black mb-2 tracking-widest uppercase italic">FULL BUNDLE</h4>
-          <p className="text-[10px] text-zinc-400 leading-relaxed font-medium">Includes premium social media handles as a free gift.</p>
-        </div>
-      </div>
-
-      {/* Social Media Assets */}
-      <div className="max-w-3xl w-full mb-16 z-10">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-          <SocialIcon icon={<Youtube size={20}/>} label="YouTube" href="https://youtube.com/@80dollars" />
-          <SocialIcon icon={<Github size={20}/>} label="GitHub" href="https://github.com/80dollars" />
-          <SocialIcon icon={<Facebook size={20}/>} label="Facebook" href="https://facebook.com/80dollars_com" />
-          <SocialIcon icon={<Instagram size={20}/>} label="Instagram" href="https://instagram.com/80dollars_com" />
-          <SocialIcon icon={<Twitter size={20}/>} label="X" href="https://x.com/80dollars_com" />
-          <SocialIcon icon={<Linkedin size={20}/>} label="LinkedIn" href="https://linkedin.com/company/80dollars_com" />
-        </div>
-      </div>
-
-      {/* Acquisition Section */}
-      <div className="max-w-md w-full bg-zinc-900/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800 text-center shadow-2xl z-10">
-        <h3 className="text-2xl font-black text-white mb-4 italic uppercase tracking-tighter">Make an Offer</h3>
-        <p className="text-zinc-400 text-xs mb-10 leading-relaxed font-bold uppercase tracking-wide">
-          Secure this rare asset. Transfer via Escrow.com or Dan.com
+        <p className="text-xl text-gray-400 font-light mb-12 tracking-widest uppercase">
+          This Premium Asset is <span className="text-yellow-500 font-bold underline decoration-yellow-500/50 underline-offset-8">For Sale</span>
         </p>
-        
-        <a 
-          href="mailto:contact@80dollars.com"
-          className="flex items-center justify-center gap-3 bg-yellow-500 hover:bg-white text-black font-black py-5 rounded-2xl transition-all duration-300 w-full text-xs tracking-[0.2em] uppercase shadow-lg shadow-yellow-500/10"
-        >
-          <Mail size={18} />
-          Contact Broker
-        </a>
+
+        {/* بطاقة السعر الاحترافية */}
+        <div className="bg-zinc-900/30 border border-zinc-800 backdrop-blur-xl p-10 rounded-3xl mb-12 shadow-2xl">
+          <div className="text-sm text-zinc-500 uppercase tracking-widest mb-4 font-medium">Asking Price</div>
+          <div className="text-6xl font-black mb-8 text-white">$5,000 <span className="text-lg text-zinc-500 font-normal">USD</span></div>
+          
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="bg-black/50 p-4 rounded-xl border border-zinc-800">
+              <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Status</p>
+              <p className="text-lg font-bold text-yellow-500">Available</p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-xl border border-zinc-800">
+              <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">History</p>
+              <p className="text-lg font-bold text-yellow-500">20+ Years</p>
+            </div>
+          </div>
+
+          <a 
+            href="mailto:Sales@80dollars.com?subject=Serious Offer for 80dollars.com"
+            className="block w-full py-5 rounded-2xl bg-yellow-500 text-black font-black text-lg uppercase tracking-[0.2em] hover:bg-yellow-400 transition-all shadow-xl shadow-yellow-500/20 active:scale-95"
+          >
+            Make an Offer
+          </a>
+        </div>
+
+        {/* الروابط الاجتماعية الرسمية (المحدثة بدقة) */}
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-10 border-t border-zinc-800/60">
+          <a href="https://youtube.com/@80dollars" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">YouTube</a>
+          <a href="https://github.com/80dollars" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">GitHub</a>
+          <a href="https://facebook.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Facebook</a>
+          <a href="https://instagram.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Instagram</a>
+          <a href="https://x.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">X</a>
+          <a href="https://linkedin.com/in/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">LinkedIn</a>
+        </div>
+
+        <footer className="mt-16 text-[9px] text-zinc-800 uppercase tracking-[0.4em]">
+          Secure Asset Transfer | Certified Domain
+        </footer>
       </div>
-
-      <footer className="mt-20 text-zinc-800 text-[8px] tracking-[0.5em] font-black uppercase z-10">
-        © 80DOLLARS PREMIUM ASSETS
-      </footer>
-    </div>
-  );
-}
-
-function SocialIcon({ icon, label, href }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" 
-       className="flex flex-col items-center justify-center p-4 bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/50 rounded-2xl hover:border-yellow-500 hover:bg-zinc-900 transition-all group">
-      <div className="text-zinc-600 group-hover:text-yellow-500 transition-colors mb-2">{icon}</div>
-      <span className="text-[7px] font-black text-zinc-700 group-hover:text-zinc-300 uppercase tracking-tighter">{label}</span>
-    </a>
+    </main>
   );
 }
