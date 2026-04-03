@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Youtube, Github, Facebook, Instagram, Twitter, Linkedin, Gift, History, Zap, Globe, ShieldCheck } from "lucide-react";
+import { Youtube, Github, Facebook, Instagram, Linkedin, Gift, History, Zap, Globe, ShieldCheck } from "lucide-react";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-12 text-center relative overflow-hidden">
       
-      {/* 1. الخلفية: logo.png كـ Watermark */}
+      {/* 1. تأثير الخلفية الفخم (الغبار الذهبي + اللوجو المائي) */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#221a00_0%,#000_80%)] opacity-70"></div>
         <div className="absolute inset-0 opacity-20 animate-pulse" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
@@ -23,100 +23,110 @@ export default function Home() {
 
       <div className="relative z-10 w-full max-w-4xl">
         
-        {/* التأسيس 2004 */}
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-6 inline-flex items-center gap-2 border border-yellow-600/30 px-4 py-1.5 rounded-full bg-yellow-950/20 backdrop-blur-md">
+        {/* ملصق التأسيس 2004 */}
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-8 inline-flex items-center gap-2 border border-yellow-600/30 px-4 py-2 rounded-full bg-yellow-950/20 backdrop-blur-md shadow-[0_0_15px_rgba(234,179,8,0.2)]">
           <History size={14} className="text-yellow-500" />
           <span className="text-yellow-500 font-bold tracking-[0.2em] text-[10px] uppercase">Established 2004 • 20+ Years Authority</span>
         </motion.div>
 
-        {/* اسم الدومين */}
+        {/* اسم الدومين - كبير وفخم جداً */}
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="mb-4">
-          <h1 className="text-5xl sm:text-8xl font-black tracking-tighter italic leading-none uppercase text-white">
-            80DOLLARS<span className="text-yellow-500 block sm:inline ml-0 sm:ml-4">.COM</span>
+          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter italic leading-none uppercase text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+            80DOLLARS<span className="text-yellow-500 block sm:inline ml-0 sm:ml-4 drop-shadow-[0_0_30px_rgba(234,179,8,0.5)]">.COM</span>
           </h1>
         </motion.div>
 
-        <p className="text-zinc-500 text-xs sm:text-lg mb-12 tracking-[0.3em] uppercase font-light">Legacy Premium Domain Asset</p>
+        <p className="text-zinc-500 text-sm md:text-xl mb-12 tracking-[0.4em] uppercase font-light">Legacy Premium Domain Asset</p>
 
-        {/* قائمة المميزات (شاملة Clean History) */}
-        <div className="flex flex-col gap-3 mb-12 max-w-xl mx-auto w-full">
-          <div className="bg-zinc-900/40 border border-zinc-800 p-4 rounded-2xl flex items-center gap-4 text-left backdrop-blur-md">
-            <Zap className="text-yellow-500 shrink-0" size={20} />
-            <div>
-              <h4 className="text-xs font-bold text-white uppercase italic tracking-wider">High Performance</h4>
-              <p className="text-[10px] text-zinc-500 uppercase">Former Hub for Tech Services & Currency Solutions.</p>
-            </div>
-          </div>
-
-          <div className="bg-zinc-900/40 border border-zinc-800 p-4 rounded-2xl flex items-center gap-4 text-left backdrop-blur-md">
-            <Globe className="text-yellow-500 shrink-0" size={20} />
-            <div>
-              <h4 className="text-xs font-bold text-white uppercase italic tracking-wider">Global Authority</h4>
-              <p className="text-[10px] text-zinc-500 uppercase">Indexed in Web Archives since March 2004.</p>
-            </div>
-          </div>
-
-          {/* خانة Clean History المسترجعة */}
-          <div className="bg-zinc-900/40 border border-zinc-800 p-4 rounded-2xl flex items-center gap-4 text-left backdrop-blur-md">
-            <ShieldCheck className="text-yellow-500 shrink-0" size={20} />
-            <div>
-              <h4 className="text-xs font-bold text-white uppercase italic tracking-wider">Clean History</h4>
-              <p className="text-[10px] text-zinc-500 uppercase">Verified Ownership & Secure Asset Transfer.</p>
-            </div>
-          </div>
+        {/* قائمة المميزات (تعديل 1: أيقونات أكبر + Clean History) */}
+        <div className="flex flex-col gap-4 mb-12 max-w-2xl mx-auto w-full">
+          {[
+            { Icon: Zap, title: "High Performance", desc: "Former Hub for Tech Services & Currency Solutions." },
+            { Icon: Globe, title: "Global Authority", desc: "Indexed in Web Archives since March 2004." },
+            { Icon: ShieldCheck, title: "Clean History", desc: "Verified Ownership & Secure Asset Transfer." }
+          ].map((item, i) => (
+            <motion.div key={i} initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i*0.1 }} className="bg-zinc-900/30 border border-zinc-800 backdrop-blur-md p-6 rounded-2xl flex items-start gap-6 text-left hover:border-yellow-600/50 transition-colors group">
+              <item.Icon className="text-yellow-500 group-hover:scale-110 transition-transform shrink-0 mt-1" size={28} />
+              <div>
+                <h4 className="text-base font-bold text-white uppercase italic tracking-wider">{item.title}</h4>
+                <p className="text-[11px] text-zinc-500 leading-relaxed mt-1 uppercase">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* كرت السعر والروابط */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-gradient-to-b from-zinc-800/40 to-black border border-yellow-600/20 p-8 rounded-[2.5rem] shadow-2xl relative mb-10">
-          <div className="absolute top-4 right-6 text-yellow-500 flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest">
-            ● Certified Asset
-          </div>
-          <p className="text-[10px] text-zinc-500 uppercase mb-2 tracking-[0.3em]">Current Valuation</p>
-          <div className="text-6xl font-black mb-2 text-white tracking-tighter italic">$4,800 <span className="text-sm font-normal text-zinc-500 uppercase not-italic">USD</span></div>
+        {/* 2. كرت السعر (تعديل 2: high demand يسينيالي + PRICE IS SUBJECT TO INCREASE) */}
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="bg-gradient-to-b from-zinc-800/40 to-black border border-yellow-600/20 p-10 rounded-[3rem] shadow-2xl relative mb-12 overflow-hidden group">
           
-          {/* رابط الإيميل لتقديم عرض */}
-          <a href="mailto:Sales@80dollars.com?subject=Serious Offer for 80dollars.com Bundle" className="mt-8 block w-full py-5 rounded-2xl bg-yellow-500 text-black font-black text-xs uppercase tracking-[0.2em] transition-all hover:bg-yellow-400">
+          {/* تعديل 2: high demand يسينيالي */}
+          <div className="absolute top-5 right-8 text-yellow-500 flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest animate-pulse whitespace-nowrap">
+            ● High Demand
+          </div>
+          
+          <p className="text-[11px] text-zinc-500 uppercase mb-3 tracking-[0.3em]">Current Valuation</p>
+          <div className="text-7xl md:text-8xl font-black mb-3 text-white tracking-tighter italic drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">$4,800 <span className="text-sm font-normal text-zinc-500 uppercase not-italic">USD</span></div>
+          
+          {/* تعديل 2: PRICE IS SUBJECT TO INCREASE */}
+          <p className="text-[11px] text-yellow-600 font-black mb-10 uppercase italic whitespace-nowrap tracking-wider">Price is Subject to Increase</p>
+          
+          <a href="mailto:Sales@80dollars.com?subject=Serious Offer for 80dollars.com Bundle Deal" className="block w-full py-6 rounded-2xl bg-yellow-500 text-black font-black text-sm uppercase tracking-[0.25em] transition-all hover:bg-yellow-400 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(234,179,8,0.4)] active:scale-95">
             Make An Offer
           </a>
         </motion.div>
 
-        {/* قسم الهدية */}
-        <div className="bg-yellow-950/10 border border-yellow-600/20 p-6 rounded-3xl mb-12 backdrop-blur-sm flex items-center gap-6 text-left">
-          <Gift size={24} className="text-yellow-500 shrink-0" />
-          <p className="text-zinc-400 text-[10px] uppercase tracking-wider leading-relaxed">
-            Purchase includes all official matching social media accounts (YT, FB, X, IG) as a **Free Gift**.
-          </p>
+        {/* 3. قسم الهدية (تعديل 3: FREE BONUS INCLUDED + رمز كادو كبير + أسماء المنصات) */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="bg-yellow-950/10 border border-yellow-600/30 p-10 rounded-3xl mb-16 backdrop-blur-sm relative overflow-hidden group">
+          
+          {/* تعديل 3: رمز الكادو كبير */}
+          <div className="absolute -top-6 -left-6 bg-yellow-500 text-black p-5 rounded-full shadow-xl group-hover:rotate-12 transition-transform">
+            <Gift size={32} />
+          </div>
+          
+          <div className="text-left md:flex md:items-center md:justify-between gap-10">
+            <div>
+              {/* تعديل 3: FREE BONUS INCLUDED */}
+              <h3 className="text-3xl font-black text-white uppercase italic mb-3 tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">FREE BONUS INCLUDED</h3>
+              
+              {/* تعديل 3: الوصف + أسماء المنصات دقيقة */}
+              <p className="text-zinc-400 text-sm max-w-xl leading-relaxed uppercase">Get all official 80dollars social media accounts (<span className="text-yellow-500 font-bold">YT, FB, IG, X, IN</span>) for **FREE** with your purchase. Instant brand authority included.</p>
+            </div>
+            <div className="text-[10px] font-bold text-yellow-500 uppercase tracking-widest bg-black/80 px-6 py-2 rounded-full border border-zinc-800 whitespace-nowrap mt-4 md:mt-0">
+              $1,500 Gift Value
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 4. الروابط الاجتماعية بلوقو كل موقع (تعديل 4: تصليح لوجو X) */}
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-20 pt-10 border-t border-zinc-900/60 w-full max-w-3xl mx-auto">
+          {[
+            { Icon: Youtube, url: "https://youtube.com/@80dollars" },
+            { Icon: Github, url: "https://github.com/80dollars" },
+            { Icon: Facebook, url: "https://facebook.com/80dollars_com" },
+            { Icon: Instagram, url: "https://instagram.com/80dollars_com" },
+            // تعديل 4: استعمال أيقونة X الحقيقية (النصية) بدلاً من تويتر القديم
+            { name: "X", url: "https://x.com/80dollars_com" }, 
+            { Icon: Linkedin, url: "https://linkedin.com/in/80dollars_com" }
+          ].map((link, i) => (
+            <motion.a key={i} href={link.url} target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.15 }} className="text-zinc-500 hover:text-yellow-500 transition-colors">
+              {link.name ? (
+                <span className="font-bold text-xl tracking-tighter uppercase">{link.name}</span>
+              ) : (
+                <link.Icon size={28} />
+              )}
+            </motion.a>
+          ))}
         </div>
 
-        {/* روابط التواصل الاجتماعي الفعلية */}
-        <div className="flex flex-wrap justify-center gap-8 mb-16">
-          <a href="https://youtube.com/@80dollars" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Youtube size={24} />
-          </a>
-          <a href="https://github.com/80dollars" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Github size={24} />
-          </a>
-          <a href="https://facebook.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Facebook size={24} />
-          </a>
-          <a href="https://instagram.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Instagram size={24} />
-          </a>
-          <a href="https://x.com/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Twitter size={24} />
-          </a>
-          <a href="https://linkedin.com/in/80dollars_com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-yellow-500 transition-colors">
-            <Linkedin size={24} />
-          </a>
+        {/* 5. شركات الضمان (تعديل 5: إضافة Afternic) */}
+        <div className="flex flex-wrap justify-center gap-12 mb-16 grayscale opacity-20 hover:opacity-100 transition-opacity italic font-black text-xl tracking-tighter uppercase pointer-events-none">
+           <motion.span whileHover={{ scale: 1.05 }}>ESCROW<span className="text-blue-500">.COM</span></motion.span>
+           <motion.span whileHover={{ scale: 1.05 }}>DAN<span className="text-orange-500">.COM</span></motion.span>
+           {/* تعديل 5: إضافة Afternic */}
+           <motion.span whileHover={{ scale: 1.05 }}>AFTER<span className="text-green-500">NIC</span>.COM</motion.span> 
         </div>
 
-        <div className="flex justify-center gap-8 mb-12 grayscale opacity-20 italic font-black text-lg tracking-tighter uppercase">
-           <span>ESCROW.COM</span>
-           <span>DAN.COM</span>
-        </div>
-
-        <footer className="text-[8px] text-zinc-800 uppercase tracking-[0.4em] pb-10">
-          Private Asset Transfer • 80dollars.com
+        <footer className="text-[9px] text-zinc-800 uppercase tracking-[0.5em] pb-10">
+          Private Domain Asset • Certified Clean History
         </footer>
       </div>
     </main>
